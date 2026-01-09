@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+}
+
+.glow-button {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+  transform: scale(1.05);
+}
+
+/* Fade-in effect for page load */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input styling */
+.mantine-TextInput-input, .mantine-PasswordInput-input {
+  background: rgba(255,255,255,0.25);
+  color: rgb(0, 0, 0);
+  border: none;
+}
+
+.mantine-TextInput-label, .mantine-PasswordInput-label {
+  color: rgb(0, 0, 0);
+}
+
+.mantine-TextInput-input::placeholder, .mantine-PasswordInput-input::placeholder {
+  color: rgba(255,255,255,0.7);
+}

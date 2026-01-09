@@ -1,0 +1,86 @@
+.services-page {
+  background: #f6f9fc;
+  min-height: 100dvh;
+}
+
+/* Hero */
+.services-hero {
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 60%, #f8fbff 100%);
+  border-color: #e7ecf2;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+}
+.services-title {
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+.services-subtitle {
+  max-width: 60ch;
+}
+
+/* Feature cards */
+.service-card {
+  background: #fff;
+  border-color: #e7ecf2;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+}
+.service-icon {
+  background: #eef4ff;
+  color: #1d4ed8;
+}
+.service-title {
+  margin-top: 10px;
+}
+.service-desc {
+  color: #475569;
+}
+
+/* Why / Steps / FAQ */
+.why-card,
+.steps-card,
+.faq-card {
+  background: #fff;
+  border-color: #e7ecf2;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+}
+.why-list li {
+  margin-bottom: 6px;
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  background: #1d4ed8;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+/* CTA */
+.services-cta-title {
+  letter-spacing: -0.01em;
+}
+.services-cta-desc {
+  color: #64748b;
+}
+.services-cta-button {
+  background: #1d4ed8;
+}
+.services-cta-button:hover {
+  background: #2148c0;
+}
+
+/* Responsive polish */
+@media (max-width: 640px) {
+  .services-subtitle {
+    max-width: 100%;
+  }
+}

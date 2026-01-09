@@ -1,0 +1,213 @@
+/* Page shell (soft blue background like the reference) */
+.blog-wrap {
+  background: #f6f9fc;
+  min-height: 100dvh;
+  padding: 32px 24px 48px;
+}
+
+.blog-title {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.blog-subtitle {
+  color: #64748b;
+  margin: 6px 0 18px;
+}
+
+/* Divider label in the ref is subtle; we emulate with spacing via the grid start */
+.grid.three-col {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.post-card {
+  background: #fff;
+  border: 1px solid #e7ecf2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+}
+
+/* Media area with fixed aspect ratio like the screenshot */
+.media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #eef2f6;
+}
+.cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Date ribbon top-right */
+.date-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 52px;
+  height: 62px;
+  border-radius: 6px;
+  background: #111827;
+  color: #fff;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  line-height: 1;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+.date-badge .day {
+  font-weight: 800;
+  font-size: 18px;
+}
+.date-badge .mon {
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* Small flag top-left (camera/quote in ref). Placeholder symbol used. */
+.flag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 26px;
+  height: 26px;
+  background: rgba(17, 24, 39, 0.7);
+  color: #fff;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+}
+
+/* Text content */
+.content {
+  padding: 16px 18px 12px;
+}
+.category {
+  color: #8a94a6;
+  text-transform: capitalize;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+.title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+}
+.excerpt {
+  color: #475569;
+  margin: 0 0 10px;
+}
+
+/* Meta row (author + comments) */
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #64748b;
+  margin: 8px 0 6px;
+}
+.author {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.author img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+}
+.comments .dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 50%;
+  margin-right: 6px;
+  transform: translateY(-2px);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+.read-more {
+  background: none;
+  border: none;
+  color: #111827;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+}
+.read-more:hover {
+  text-decoration: underline;
+}
+.toggle-details {
+  margin-left: auto;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 8px;
+  color: #0f172a;
+  cursor: pointer;
+}
+.toggle-details:hover {
+  background: #e8eef7;
+}
+
+/* Expandable details (animated height) */
+.dropdown {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 220ms ease;
+  border-top: 1px solid #eef2f6;
+}
+.dropdown.open {
+  max-height: 240px; /* enough for a short description; adjust if needed */
+}
+.details {
+  padding: 12px 0;
+  color: #334155;
+}
+
+/* Fade-in on mount */
+.fade-in {
+  animation: fadeInUp 320ms ease both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive: 2 cols on tablets, 1 on mobile */
+@media (max-width: 1024px) {
+  .grid.three-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .grid.three-col {
+    grid-template-columns: 1fr;
+  }
+}

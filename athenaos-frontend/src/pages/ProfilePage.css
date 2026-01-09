@@ -1,0 +1,66 @@
+/* Match Dashboard's soft background + card feel */
+.page-root {
+  padding: 24px;
+  background: #f6f9fc;
+  min-height: 100dvh;
+}
+
+/* Breadcrumb header (reuse names from Dashboard) */
+.dash-header {
+  margin-bottom: 12px;
+}
+.dash-breadcrumb .crumb-muted {
+  color: var(--mantine-color-dimmed);
+  font-weight: 600;
+}
+
+/* Outline button to match dashboard action button */
+.btn-outline {
+  background: #fff;
+  border: 1px solid var(--mantine-color-gray-3);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+/* KPI tiles like dashboard */
+.kpi-card {
+  background: #fff;
+  border-color: var(--mantine-color-gray-3);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+}
+.kpi-value {
+  font-size: clamp(28px, 3.2vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Generic card style for profile sections */
+.profile-card {
+  background: #fff;
+  border-color: var(--mantine-color-gray-3);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+}
+
+/* Details list */
+.details-list > * + * {
+  margin-top: 8px;
+}
+.field-label {
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* Chat history table (same vibe as dashboard) */
+.chat-table tbody tr:hover td {
+  background: #f6f9fc;
+}
+.th-right,
+.td-right {
+  text-align: right;
+}
+
+/* Footer divider */
+.foot-row {
+  border-top: 1px solid var(--mantine-color-gray-3);
+  margin-top: 20px;
+  padding-top: 12px;
+}

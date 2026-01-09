@@ -1,0 +1,211 @@
+/* ======= Base variables (default fallback) ======= */
+.productivity-theme {
+  --bg: #FFF8FA;
+  --text: #3D3D3D;
+  --muted: #6B7280;
+  --accent: #EC959F;
+  --accent-r: 236; --accent-g: 149; --accent-b: 159;
+  --border: #E9D6DB;
+  --card-bg: #FFFFFF;
+}
+
+/* ======= Preset themes (10) ======= */
+.productivity-theme.theme-calm {
+  --bg:#FFF8FA; --text:#3D3D3D; --muted:#6B7280;
+  --accent:#EC959F; --accent-r:236; --accent-g:149; --accent-b:159;
+  --border:#E9D6DB; --card-bg:#FFFFFF;
+}
+.productivity-theme.theme-dark {
+  --bg:#111318; --text:#E6E6E6; --muted:#A0A0A0;
+  --accent:#EC959F; --accent-r:236; --accent-g:149; --accent-b:159;
+  --border:#2A2D34; --card-bg:#171A20;
+}
+.productivity-theme.theme-professional {
+  --bg:#F7F9FC; --text:#1C2430; --muted:#6B7A8C;
+  --accent:#2563EB; --accent-r:37; --accent-g:99; --accent-b:235;
+  --border:#D6DFEC; --card-bg:#FFFFFF;
+}
+.productivity-theme.theme-aesthetic {
+  --bg:#FFF7FB; --text:#3A2E39; --muted:#7A6A75;
+  --accent:#E08DAC; --accent-r:224; --accent-g:141; --accent-b:172;
+  --border:#F0D5E2; --card-bg:#FFFFFF;
+}
+.productivity-theme.theme-ocean {
+  --bg:#F5FBFF; --text:#0F2233; --muted:#607B8B;
+  --accent:#2FA3DA; --accent-r:47; --accent-g:163; --accent-b:218;
+  --border:#CFE8F5; --card-bg:#FFFFFF;
+}
+.productivity-theme.theme-forest {
+  --bg:#F7FFF9; --text:#132019; --muted:#5F7268;
+  --accent:#2BA36A; --accent-r:43; --accent-g:163; --accent-b:106;
+  --border:#D0EBDD; --card-bg:#FFFFFF;
+}
+.productivity-theme.theme-sunset {
+  --bg:#FFF7F1; --text:#2E1A12; --muted:#7A6259;
+  --accent:#F28C3A; --accent-r:242; --accent-g:140; --accent-b:58;
+  --border:#F5D4B8; --card-bg:#FFFFFF;
+}
+.productivity-theme.theme-slate {
+  --bg:#F8FAFC; --text:#0F172A; --muted:#64748B;
+  --accent:#475569; --accent-r:71; --accent-g:85; --accent-b:105;
+  --border:#E2E8F0; --card-bg:#FFFFFF;
+}
+.productivity-theme.theme-lavender {
+  --bg:#FAF7FF; --text:#2D2240; --muted:#7A6B9A;
+  --accent:#8B5CF6; --accent-r:139; --accent-g:92; --accent-b:246;
+  --border:#E3DAFB; --card-bg:#FFFFFF;
+}
+.productivity-theme.theme-contrast {
+  --bg:#FFFFFF; --text:#0A0A0A; --muted:#555;
+  --accent:#D00000; --accent-r:208; --accent-g:0; --accent-b:0;
+  --border:#D7D7D7; --card-bg:#FFFFFF;
+}
+
+/* ======= Page chrome ======= */
+.productivity-theme {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.productivity-theme .service-card {
+  background: var(--card-bg);
+  border-color: var(--border);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.productivity-theme .service-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.18);
+}
+
+/* Accent buttons (filled) */
+.productivity-theme .accent-btn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.productivity-theme .accent-btn:hover { filter: brightness(0.95); }
+
+/* Accent outline buttons */
+.productivity-theme .accent-outline {
+  border: 1px solid var(--accent) !important;
+  color: var(--accent) !important;
+  background: rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.06) !important;
+}
+.productivity-theme .accent-outline:hover {
+  background: rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.12) !important;
+}
+
+/* ======= Notes canvas ======= */
+.productivity-theme .notes-canvas {
+  min-height: 560px;
+  position: relative;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  background:
+    radial-gradient(1200px 400px at 80% 0%, rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.06), transparent 60%),
+    linear-gradient(180deg, #ffffff, rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.05));
+  overflow: hidden;
+}
+
+/* Sticky notes */
+.productivity-theme .sticky-note {
+  position: absolute;
+  width: 240px;
+  height: 210px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.productivity-theme .note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  cursor: grab;
+  -webkit-backdrop-filter: saturate(120%) blur(2px);
+  backdrop-filter: saturate(120%) blur(2px);
+}
+
+.productivity-theme .note-textarea {
+  flex: 1;
+  margin: 8px;
+  padding: 6px 8px;
+  resize: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font: 14px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.productivity-theme .note-footer {
+  padding: 4px 8px;
+  border-top: 1px dashed rgba(0,0,0,0.15);
+  color: var(--muted);
+}
+
+/* ======= Calendar ======= */
+.productivity-theme .cal-head {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.productivity-theme .cal-head-cell {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.productivity-theme .cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.productivity-theme .cal-cell {
+  min-height: 92px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.productivity-theme .cal-cell.dim {
+  background: rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.05);
+  color: #9ca3af;
+}
+
+.productivity-theme .cal-day {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.productivity-theme .cal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.productivity-theme .cal-pill {
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.16);
+  border: 1px solid rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.36);
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.productivity-theme .cal-more {
+  font-size: 11px;
+  color: var(--muted);
+}

@@ -1,0 +1,49 @@
+/* src/pages/HomePage.module.css */
+
+.heroSection {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4a5568; /* Một màu xám */
+  opacity: 0.4;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  padding: 0 1rem;
+}
+
+.icon {
+  margin: 0 auto 1.5rem auto;
+  font-size: 3rem; /* 48px */
+  padding: 0.75rem; /* 12px */
+  border: 2px solid white;
+  border-radius: 9999px; /* bo tròn */
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.75rem; /* 60px */
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.25rem; /* 20px */
+  letter-spacing: 0.1em; /* tracking-widest */
+}
