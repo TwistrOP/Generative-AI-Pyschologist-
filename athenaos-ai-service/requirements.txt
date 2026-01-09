@@ -1,0 +1,10 @@
+# requirements.txt
+
+# Web framework
+fastapi
+uvicorn
+
+# API Clients and Configuration
+requests 
+python-dotenv
+groq
