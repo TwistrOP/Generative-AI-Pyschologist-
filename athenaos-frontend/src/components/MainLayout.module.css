@@ -1,0 +1,48 @@
+/* src/components/MainLayout.module.css */
+
+/* --- Styling cho link --- */
+.link {
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #333;
+  transition: width 0.3s ease;
+}
+
+.link:hover {
+  color: #000;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* --- Responsive --- */
+.desktopNav {
+  display: flex;  
+}
+
+.mobileNav {
+  display: none; 
+}
+
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none; 
+  }
+
+  .mobileNav {
+    display: flex; 
+  }
+}
